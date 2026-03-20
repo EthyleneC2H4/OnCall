@@ -218,7 +218,7 @@ up:
 		docker ps --filter "name=milvus" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"; \
 	else \
 		echo "$(YELLOW)🚀 启动 Docker Compose...$(NC)"; \
-		docker compose -f $(DOCKER_COMPOSE_FILE) up -d; \
+		docker-compose -f $(DOCKER_COMPOSE_FILE) up -d; \
 		echo ""; \
 		echo "$(YELLOW)⏳ 等待容器启动...$(NC)"; \
 		sleep 5; \
@@ -246,7 +246,7 @@ down:
 		exit 1; \
 	fi
 	@if docker ps --format '{{.Names}}' | grep -q "milvus"; then \
-		docker compose -f $(DOCKER_COMPOSE_FILE) down; \
+		docker-compose -f $(DOCKER_COMPOSE_FILE) down; \
 		echo "$(GREEN)✅ Docker Compose 已停止$(NC)"; \
 	else \
 		echo "$(YELLOW)⚠️  没有运行中的 Milvus 容器$(NC)"; \
