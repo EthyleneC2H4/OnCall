@@ -1,0 +1,68 @@
+# =========================
+# Environment Variables & Secrets (CRITICAL)
+# =========================
+# Never commit your API keys (OpenAI, Anthropic, etc.)
+.env
+.env.*
+*.pem
+secrets/
+credentials.json
+client_secret.json
+
+# =========================
+# AI Agent Specific / Memory / Vector DBs
+# =========================
+# Local Vector Stores (ChromaDB, FAISS, Qdrant, etc.)
+chroma_db/
+chroma/
+faiss_index/
+*.index
+*.faiss
+*.pkl
+
+# LangChain / LlamaIndex / LLM Caches
+.langchain.db
+llm_cache/
+storage/
+
+# Agent Workspaces / Generated Outputs
+# Folders where agents write code, download files, or generate data
+workspace/
+workdir/
+output/
+generated_files/
+artifacts/
+tmp/
+
+# =========================
+# Logs & Telemetry
+# =========================
+# Agent execution logs and tracing
+*.log
+logs/
+agent_traces/
+langsmith_logs/
+wandb/
+
+# =========================
+# Python & Virtual Environments
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+venv/
+env/
+.venv/
+conda_env/
+
+# =========================
+# IDE & OS Files
+# =========================
+.vscode/
+.idea/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
